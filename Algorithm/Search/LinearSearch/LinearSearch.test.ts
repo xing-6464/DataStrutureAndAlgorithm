@@ -1,5 +1,4 @@
-import { describe, it, test, expect } from '@jest/globals'
-import LinearSearch from '../LinearSearch/LinearSearch'
+import LinearSearch from './LinearSearch'
 
 test('test LinearSearch', () => {
   const data = [24, 18, 12, 9, 16, 66, 32, 4]
