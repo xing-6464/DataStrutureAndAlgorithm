@@ -1,7 +1,7 @@
 class LinearSearch {
   private constructor() {}
 
-  static search(data: number[], target: number) {
+  static search<T>(data: T[], target: T): number {
     for (let i = 0, len = data.length; i < len; i++) {
       if (data[i] === target) return i
     }
