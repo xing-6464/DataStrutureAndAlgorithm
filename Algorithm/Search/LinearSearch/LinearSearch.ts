@@ -3,6 +3,8 @@
  * @author 星光
  */
 
+import ArrayGenerator from '../../util/ArrayGenerator'
+
 class LinearSearch {
   private constructor() {}
 
@@ -16,11 +18,31 @@ class LinearSearch {
         if (fn(data[i], target)) return i
         continue
       }
+
       if (data[i] === target) return i
     }
 
     return -1
   }
 }
+
+/**
+ * 性能测试
+ */
+
+function test() {
+  const dataSize = [1000000, 10000000]
+  for (const n of dataSize) {
+    const data = ArrayGenerator.generatorOrderedArray(n)
+
+    console.time(`${n} test-linearSearch`)
+    for (let i = 0; i < 100; i++) {
+      LinearSearch.search(data, n)
+    }
+    console.timeEnd(`${n} test-linearSearch`)
+  }
+}
+
+test()
 
 export default LinearSearch
