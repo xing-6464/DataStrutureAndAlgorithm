@@ -2,8 +2,7 @@ import LinearSearch from './LinearSearch'
 
 const setup = (i: number) => {
   const data = [24, 18, 12, 9, 16, 66, 32, 4]
-  const ls = new LinearSearch()
-  const res = ls.search(data, i)
+  const res = LinearSearch.search(data, i)
 
   return res
 }
