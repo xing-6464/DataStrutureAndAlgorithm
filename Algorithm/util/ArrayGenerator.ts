@@ -24,4 +24,4 @@ class ArrayGenerator {
   }
 }
 
-export default ArrayGenerator
+export { ArrayGenerator }

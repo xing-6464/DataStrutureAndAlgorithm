@@ -3,7 +3,7 @@
  * @author 星光
  */
 
-import ArrayGenerator from '../../util/ArrayGenerator'
+import { ArrayGenerator } from '../../util/ArrayGenerator'
 
 class LinearSearch {
   private constructor() {}
@@ -46,4 +46,4 @@ class LinearSearch {
 
 // test()
 
-export default LinearSearch
+export { LinearSearch }

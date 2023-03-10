@@ -1,4 +1,4 @@
-import LinearSearch from './LinearSearch'
+import { LinearSearch } from './LinearSearch'
 import Student from '../../test/Student'
 
 const setup = (i: number) => {
@@ -22,12 +22,12 @@ describe('测试 线性查找算法', () => {
   })
 
   test('测试传入回调方式', () => {
-    const Student1 = new Student('xing')
-    const Student2 = new Student('guang')
+    const Student1 = new Student('xing', 100)
+    const Student2 = new Student('guang', 80)
 
     const arr = [Student1, Student2]
 
-    const target = new Student('guang')
+    const target = new Student('guang', 98)
     const res = LinearSearch.search(arr, target, (n1, n2) => {
       if (n1.name === n2.name) return true
 

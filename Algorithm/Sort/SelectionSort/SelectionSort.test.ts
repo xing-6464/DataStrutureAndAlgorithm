@@ -4,7 +4,7 @@
  */
 
 import Student from '../../test/Student'
-import SelectionSort from './SelectionSort'
+import { SelectionSort } from './SelectionSort'
 
 describe('测试选择排序算法类', () => {
   test('数字排序', () => {

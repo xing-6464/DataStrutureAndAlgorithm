@@ -3,7 +3,8 @@
  * @author 星光
  */
 
-import ArrayGenerator from '../../util/ArrayGenerator'
+import { ArrayGenerator } from '../../util/ArrayGenerator'
+import { SortingHelper } from '../../util/SortingHelper'
 
 class SelectionSort {
   private constructor() {}
@@ -48,16 +49,14 @@ class SelectionSort {
  */
 
 function test() {
-  const n = 10000
-  const arr = ArrayGenerator.generateRandomArray(n, n)
-  console.info(arr)
-  // console.time('arr sort')
-  SelectionSort.sort(arr)
-  // console.timeEnd('arr sort')
-  console.info(arr)
-  // console.info(arr.sort())
+  const dataSize = [10000, 100000]
+
+  for (const n of dataSize) {
+    const arr = ArrayGenerator.generateRandomArray(n, n)
+    SortingHelper.sortTest('SelectionSort', arr)
+  }
 }
 
 test()
 
-export default SelectionSort
+export { SelectionSort }
