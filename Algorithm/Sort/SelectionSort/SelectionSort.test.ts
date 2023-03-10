@@ -20,8 +20,8 @@ describe('测试选择排序算法类', () => {
     const s3 = new Student('xingguang', 100)
     const studnet = [s3, s1, s2]
 
-    SelectionSort.sort(studnet, (arr, i1, i2) => {
-      return arr[i1].score - arr[i2].score
+    SelectionSort.sort(studnet, (i1, i2) => {
+      return i1.score - i2.score
     })
 
     expect(studnet).toEqual([s2, s1, s3])

@@ -6,17 +6,14 @@
 class SelectionSort {
   private constructor() {}
 
-  static sort<T>(
-    arr: T[],
-    fn?: (arr: T[], index1: number, index2: number) => number
-  ): void {
+  static sort<T>(arr: T[], fn?: (item1: T, item2: T) => number): void {
     let minIndex: number
     for (let i = 0, len = arr.length; i < len; i++) {
       minIndex = i
       for (let j = i; j < len; j++) {
         // 自己实现不可比较的逻辑函数
         if (fn) {
-          const res = fn(arr, i, j)
+          const res = fn(arr[i], arr[j])
           if (res > 0) {
             minIndex = j
           } else {
