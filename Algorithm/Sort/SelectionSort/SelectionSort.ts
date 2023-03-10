@@ -3,13 +3,17 @@
  * @author 星光
  */
 
+import ArrayGenerator from '../../util/ArrayGenerator'
+
 class SelectionSort {
   private constructor() {}
 
   static sort<T>(arr: T[], fn?: (item1: T, item2: T) => number): void {
     let minIndex: number
+
     for (let i = 0, len = arr.length; i < len; i++) {
       minIndex = i
+
       for (let j = i; j < len; j++) {
         // 自己实现不可比较的逻辑函数
         if (fn) {
@@ -23,7 +27,7 @@ class SelectionSort {
           continue
         }
 
-        if (arr[i] > arr[j]) {
+        if (arr[minIndex] > arr[j]) {
           minIndex = j
         }
       }
@@ -38,5 +42,22 @@ class SelectionSort {
     arr[i] = mid
   }
 }
+
+/**
+ * 性能测试
+ */
+
+function test() {
+  const n = 10000
+  const arr = ArrayGenerator.generateRandomArray(n, n)
+  console.info(arr)
+  // console.time('arr sort')
+  SelectionSort.sort(arr)
+  // console.timeEnd('arr sort')
+  console.info(arr)
+  // console.info(arr.sort())
+}
+
+test()
 
 export default SelectionSort
