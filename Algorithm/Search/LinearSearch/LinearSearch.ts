@@ -14,6 +14,7 @@ class LinearSearch {
     fn?: (n1: T, n2: T) => boolean
   ): number {
     for (let i = 0, len = data.length; i < len; i++) {
+      // 自己实现相等类型函数
       if (fn) {
         if (fn(data[i], target)) return i
         continue
