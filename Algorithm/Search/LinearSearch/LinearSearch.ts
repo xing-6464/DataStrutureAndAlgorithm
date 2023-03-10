@@ -31,19 +31,19 @@ class LinearSearch {
  * 性能测试
  */
 
-function test() {
-  const dataSize = [1000000, 10000000]
-  for (const n of dataSize) {
-    const data = ArrayGenerator.generatorOrderedArray(n)
+// function test() {
+//   const dataSize = [1000000, 10000000]
+//   for (const n of dataSize) {
+//     const data = ArrayGenerator.generatorOrderedArray(n)
 
-    console.time(`${n} test-linearSearch`)
-    for (let i = 0; i < 100; i++) {
-      LinearSearch.search(data, n)
-    }
-    console.timeEnd(`${n} test-linearSearch`)
-  }
-}
+//     console.time(`${n} test-linearSearch`)
+//     for (let i = 0; i < 100; i++) {
+//       LinearSearch.search(data, n)
+//     }
+//     console.timeEnd(`${n} test-linearSearch`)
+//   }
+// }
 
-test()
+// test()
 
 export default LinearSearch
