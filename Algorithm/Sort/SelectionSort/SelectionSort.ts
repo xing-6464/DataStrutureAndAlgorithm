@@ -48,15 +48,15 @@ class SelectionSort {
  * 性能测试
  */
 
-function test() {
-  const dataSize = [10000, 100000]
+// function test() {
+//   const dataSize = [10000, 100000]
 
-  for (const n of dataSize) {
-    const arr = ArrayGenerator.generateRandomArray(n, n)
-    SortingHelper.sortTest('SelectionSort', arr)
-  }
-}
+//   for (const n of dataSize) {
+//     const arr = ArrayGenerator.generateRandomArray(n, n)
+//     SortingHelper.sortTest('SelectionSort', arr)
+//   }
+// }
 
-test()
+// test()
 
 export { SelectionSort }
