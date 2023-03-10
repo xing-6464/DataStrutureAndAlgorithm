@@ -16,7 +16,13 @@ class SelectionSort {
       for (let j = i; j < len; j++) {
         // 自己实现不可比较的逻辑函数
         if (fn) {
-          minIndex = fn(arr, i, j)
+          const res = fn(arr, i, j)
+          if (res > 0) {
+            minIndex = j
+          } else {
+            minIndex = i
+          }
+
           continue
         }
 
