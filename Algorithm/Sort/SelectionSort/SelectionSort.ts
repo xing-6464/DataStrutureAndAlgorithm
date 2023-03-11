@@ -10,8 +10,9 @@ class SelectionSort {
   private constructor() {}
 
   static sort<T>(arr: T[], fn?: (item1: T, item2: T) => number): void {
-    let minIndex: number
+    if (arr.length === 0) return
 
+    let minIndex: number
     for (let i = 0, len = arr.length; i < len; i++) {
       minIndex = i
 
