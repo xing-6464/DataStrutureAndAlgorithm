@@ -18,12 +18,10 @@ export class InsertionSort {
       for (let j = i; j > 0; j--) {
         if (fn) {
           const res = fn(arr, j)
-          if (res <= 0) {
-            arr[j] = arr[j - 1]
-          } else {
-            arr[j - 1] = p
+          if (res < 0) {
+            InsertionSort.swap(arr, j)
+            continue
           }
-          continue
         }
 
         if (arr[j - 1] > arr[j]) {
@@ -32,6 +30,12 @@ export class InsertionSort {
         arr[j - 1] = p
       }
     }
+  }
+
+  private static swap<T>(arr: T[], i: number) {
+    const mid = arr[i - 1]
+    arr[i - 1] = arr[i]
+    arr[i] = mid
   }
 }
 

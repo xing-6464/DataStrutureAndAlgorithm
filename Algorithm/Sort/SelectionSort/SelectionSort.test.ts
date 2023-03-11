@@ -3,7 +3,7 @@
  * @author 星光
  */
 
-import Student from '../../test/Student'
+import { Student } from '../../test/Student'
 import { SelectionSort } from './SelectionSort'
 
 describe('测试选择排序算法类', () => {

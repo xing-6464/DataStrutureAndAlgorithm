@@ -1,5 +1,5 @@
 import { LinearSearch } from './LinearSearch'
-import Student from '../../test/Student'
+import { Student } from '../../test/Student'
 
 const setup = (i: number) => {
   const data = [24, 18, 12, 9, 16, 66, 32, 4]
