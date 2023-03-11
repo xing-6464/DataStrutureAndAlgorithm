@@ -69,6 +69,61 @@ export class MyArray extends Object {
     this._data[index] = e
   }
 
+  contains(e: number) {
+    for (let i = 0; i < this._size; i++) {
+      if (this._data[i] === e) return true
+    }
+
+    return false
+  }
+
+  find(e: number) {
+    for (let i = 0; i < this._size; i++) {
+      if (this._data[i] === e) {
+        return i
+      }
+    }
+
+    return -1
+  }
+
+  remove(index: number) {
+    if (index < 0 || index >= this._data.length)
+      new Error('get failed, index is illegal')
+
+    const ret = this._data[index]
+    for (let i = index + 1; i < this._size; i++) {
+      this._data[i - 1] = this._data[i]
+    }
+    this._size--
+    return ret
+  }
+
+  removeFirst() {
+    return this.remove(0)
+  }
+
+  removeLast() {
+    return this.remove(this._size - 1)
+  }
+
+  removeElement(e: number) {
+    const index = this.find(e)
+    if (index !== -1) {
+      this.remove(index)
+      return true
+    }
+
+    return false
+  }
+
+  get getFirst() {
+    return this.get(0)
+  }
+  get getLast() {
+    return this.get(this._size - 1)
+  }
+
   get size() {
     return this._size
   }
