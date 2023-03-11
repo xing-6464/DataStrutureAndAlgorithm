@@ -20,7 +20,6 @@ export class InsertionSort {
           const res = fn(arr, j)
           if (res <= 0) {
             arr[j] = arr[j - 1]
-            // InsertionSort.swap(arr, j)
           } else {
             arr[j - 1] = p
           }
@@ -29,17 +28,10 @@ export class InsertionSort {
 
         if (arr[j - 1] > arr[j]) {
           arr[j] = arr[j - 1]
-          // InsertionSort.swap(arr, j)
         }
         arr[j - 1] = p
       }
     }
-  }
-
-  private static swap<T>(arr: T[], index: number) {
-    const mid = arr[index - 1]
-    arr[index - 1] = arr[index]
-    arr[index] = mid
   }
 }
 
@@ -47,13 +39,13 @@ export class InsertionSort {
  * 性能测试
  */
 
-function test() {
-  const dataSize = [10000, 100000]
+// function test() {
+//   const dataSize = [10000, 100000]
 
-  for (const n of dataSize) {
-    const arr = ArrayGenerator.generateRandomArray(n, n)
-    SortingHelper.sortTest('InsertionSort', arr)
-  }
-}
+//   for (const n of dataSize) {
+//     const arr = ArrayGenerator.generateRandomArray(n, n)
+//     SortingHelper.sortTest('InsertionSort', arr)
+//   }
+// }
 
-test()
+// test()
