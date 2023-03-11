@@ -3,17 +3,31 @@
  * @author 星光
  */
 
-export class MyArray {
+export class MyArray extends Object {
   private _data: number[]
   private _size: number
 
   constructor(capacity?: number) {
+    super()
     if (!capacity) {
       this._data = new Array(10)
     } else {
       this._data = new Array(capacity)
     }
     this._size = 0
+  }
+
+  toString() {
+    let res = `MyArray：size = ${this._size}, capacity = ${this._data.length}\n`
+    res += '['
+    for (let i = 0; i < this._size; i++) {
+      res += this._data[i]
+
+      if (i !== this._size - 1) res += ', '
+    }
+    res += ']'
+
+    return res
   }
 
   add(index: number, e: number) {
@@ -49,5 +63,9 @@ export class MyArray {
 
   get capacity() {
     return this._data.length
+  }
+
+  get data() {
+    return this._data
   }
 }
