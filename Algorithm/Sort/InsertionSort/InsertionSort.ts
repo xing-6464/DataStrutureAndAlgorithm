@@ -18,10 +18,13 @@ export class InsertionSort {
       for (let j = i; j > 0; j--) {
         if (fn) {
           const res = fn(arr, j)
-          if (res < 0) {
-            InsertionSort.swap(arr, j)
-            continue
+          if (res <= 0) {
+            arr[j] = arr[j - 1]
+            // InsertionSort.swap(arr, j)
+          } else {
+            arr[j - 1] = p
           }
+          continue
         }
 
         if (arr[j - 1] > arr[j]) {
