@@ -1,4 +1,5 @@
-import { SelectionSort } from '../Sort/SelectionSort/SelectionSort'
+import { SelectionSort } from '../Sort'
+import { InsertionSort } from '../Sort/InsertionSort/InsertionSort'
 
 class SortingHelper {
   private constructor() {}
@@ -18,8 +19,14 @@ class SortingHelper {
 
   static sortTest<T>(sortName: string, arr: T[]) {
     const startTime = Date.now()
-    if (sortName === 'SelectionSort') {
-      SelectionSort.sort(arr)
+    switch (sortName) {
+      case 'SelectionSort':
+        SelectionSort.sort(arr)
+        break
+
+      case 'InsertionSort':
+        InsertionSort.sort(arr)
+        break
     }
     const endTime = Date.now()
 
