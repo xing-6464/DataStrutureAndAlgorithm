@@ -31,11 +31,10 @@ export class MyArray<T> extends Object {
   }
 
   add(index: number, e: T) {
-    if (this._size === this._data.length)
-      new Error('insert failed, Array is full')
-
     if (index < 0 || index > this._size)
       new Error('Add failed. Require index >= 0 and index <= size.')
+
+    if (this._size === this._data.length) this.resize(2 * this._data.length)
 
     for (let i = this._size; i > index; i--) {
       this._data[i] = this._data[i - 1]
@@ -97,6 +96,9 @@ export class MyArray<T> extends Object {
     }
 
     this._size--
+
+    if (this._size === this._data.length / 2)
+      this.resize(Math.floor(this._data.length / 2))
     return ret
   }
 
@@ -121,6 +123,7 @@ export class MyArray<T> extends Object {
   get getFirst() {
     return this.get(0)
   }
+
   get getLast() {
     return this.get(this._size - 1)
   }
@@ -131,5 +134,14 @@ export class MyArray<T> extends Object {
 
   get capacity() {
     return this._data.length
+  }
+
+  private resize(newCapacity: number) {
+    const newData = Array<T>(newCapacity)
+
+    for (let i = 0; i < this._size; i++) {
+      newData[i] = this._data[i]
+    }
+    this._data = newData
   }
 }

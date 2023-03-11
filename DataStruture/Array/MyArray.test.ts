@@ -63,4 +63,20 @@ describe('测试数组类', () => {
     const ret = arr.removeElement(3)
     expect(ret).toBeTruthy()
   })
+
+  test('动态数组', () => {
+    const arr = new MyArray<number>()
+    for (let i = 0; i < 10; i++) {
+      arr.addLast(i)
+    }
+
+    expect(arr.capacity).toBe(10)
+
+    arr.addLast(10)
+    expect(arr.capacity).toBe(20)
+
+    arr.removeLast()
+    arr.removeLast()
+    expect(arr.capacity).toBe(10)
+  })
 })
