@@ -97,7 +97,7 @@ export class MyArray<T> extends Object {
 
     this._size--
 
-    if (this._size === this._data.length / 2)
+    if (this._size === this._data.length / 4 && this._data.length / 2 !== 0)
       this.resize(Math.floor(this._data.length / 2))
     return ret
   }

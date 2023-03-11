@@ -77,6 +77,10 @@ describe('测试数组类', () => {
 
     arr.removeLast()
     arr.removeLast()
+    arr.removeLast()
+    arr.removeLast()
+    arr.removeLast()
+    arr.removeLast()
     expect(arr.capacity).toBe(10)
   })
 })
