@@ -57,15 +57,23 @@ export class MyArray extends Object {
     return this._size === 0
   }
 
+  get(index: number) {
+    if (index < 0 || index >= this._data.length)
+      new Error('get failed, index is illegal')
+    return this._data[index]
+  }
+
+  set(index: number, e: number) {
+    if (index < 0 || index >= this._data.length)
+      new Error('get failed, index is illegal')
+    this._data[index] = e
+  }
+
   get size() {
     return this._size
   }
 
   get capacity() {
     return this._data.length
-  }
-
-  get data() {
-    return this._data
   }
 }
