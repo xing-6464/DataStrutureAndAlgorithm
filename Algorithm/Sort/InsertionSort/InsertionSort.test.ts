@@ -8,4 +8,12 @@ describe('测试插入排序算法', () => {
 
     expect(arr).toEqual([1, 2, 3, 4, 5, 6])
   })
+
+  test('空数组', () => {
+    const arr = []
+
+    InsertionSort.sort(arr)
+
+    expect(arr).toEqual([])
+  })
 })
