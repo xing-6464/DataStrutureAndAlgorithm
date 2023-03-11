@@ -14,8 +14,9 @@ export class InsertionSort {
 
     let p: T
     for (let i = 0, len = arr.length; i < len; i++) {
+      let j: number
       p = arr[i]
-      for (let j = i; j > 0; j--) {
+      for (j = i; j > 0; j--) {
         if (fn) {
           const res = fn(arr, j)
           if (res < 0) {
@@ -24,11 +25,13 @@ export class InsertionSort {
           }
         }
 
-        if (arr[j - 1] > arr[j]) {
-          arr[j] = arr[j - 1]
+        if (p > arr[j - 1]) {
+          break
         }
-        arr[j - 1] = p
+        arr[j] = arr[j - 1]
       }
+
+      arr[j] = p
     }
   }
 
