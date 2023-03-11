@@ -2,7 +2,7 @@ import { MyArray } from './MyArray'
 
 describe('测试数组类', () => {
   test('测试添加元素', () => {
-    const arr = new MyArray(20)
+    const arr = new MyArray<number>(20)
     for (let i = 0; i < 10; i++) {
       arr.addLast(i)
     }
@@ -20,7 +20,7 @@ describe('测试数组类', () => {
   })
 
   test('修改元素测试', () => {
-    const arr = new MyArray(20)
+    const arr = new MyArray<number>(20)
     for (let i = 0; i < 10; i++) {
       arr.addLast(i)
     }
@@ -33,7 +33,7 @@ describe('测试数组类', () => {
   })
 
   test('查询元素', () => {
-    const arr = new MyArray(20)
+    const arr = new MyArray<number>(20)
     for (let i = 0; i < 10; i++) {
       arr.addLast(i)
     }
@@ -45,7 +45,7 @@ describe('测试数组类', () => {
   })
 
   test('删除元素测试', () => {
-    const arr = new MyArray(20)
+    const arr = new MyArray<number>(20)
     for (let i = 0; i < 10; i++) {
       arr.addLast(i)
     }

@@ -3,8 +3,8 @@
  * @author 星光
  */
 
-export class MyArray extends Object {
-  private _data: number[]
+export class MyArray<T> extends Object {
+  private _data: T[]
   private _size: number
 
   constructor(capacity?: number) {
@@ -17,7 +17,7 @@ export class MyArray extends Object {
     this._size = 0
   }
 
-  toString() {
+  toString(): string {
     let res = `MyArray：size = ${this._size}, capacity = ${this._data.length}\n`
     res += '['
     for (let i = 0; i < this._size; i++) {
@@ -30,7 +30,7 @@ export class MyArray extends Object {
     return res
   }
 
-  add(index: number, e: number) {
+  add(index: number, e: T) {
     if (this._size === this._data.length)
       new Error('insert failed, Array is full')
 
@@ -45,11 +45,11 @@ export class MyArray extends Object {
     this._size++
   }
 
-  addLast(e: number) {
+  addLast(e: T) {
     this.add(this._size, e)
   }
 
-  addFirst(e: number) {
+  addFirst(e: T) {
     this.add(0, e)
   }
 
@@ -63,13 +63,13 @@ export class MyArray extends Object {
     return this._data[index]
   }
 
-  set(index: number, e: number) {
+  set(index: number, e: T) {
     if (index < 0 || index >= this._data.length)
       new Error('get failed, index is illegal')
     this._data[index] = e
   }
 
-  contains(e: number) {
+  contains(e: T) {
     for (let i = 0; i < this._size; i++) {
       if (this._data[i] === e) return true
     }
@@ -77,7 +77,7 @@ export class MyArray extends Object {
     return false
   }
 
-  find(e: number) {
+  find(e: T) {
     for (let i = 0; i < this._size; i++) {
       if (this._data[i] === e) {
         return i
@@ -95,6 +95,7 @@ export class MyArray extends Object {
     for (let i = index + 1; i < this._size; i++) {
       this._data[i - 1] = this._data[i]
     }
+
     this._size--
     return ret
   }
@@ -107,7 +108,7 @@ export class MyArray extends Object {
     return this.remove(this._size - 1)
   }
 
-  removeElement(e: number) {
+  removeElement(e: T) {
     const index = this.find(e)
     if (index !== -1) {
       this.remove(index)
