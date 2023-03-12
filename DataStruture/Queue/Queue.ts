@@ -44,4 +44,19 @@ export class Queue<T> extends Object implements QueueInterface<T> {
   get front() {
     return this.array.first
   }
+
+  toString(): string {
+    let res = ''
+    res += 'Queue: front ['
+    for (let i = 0; i < this.array.size; i++) {
+      res += this.array.get(i)
+      if (i !== this.array.size - 1) {
+        res += ', '
+      }
+    }
+
+    res += '] tail'
+
+    return res
+  }
 }
