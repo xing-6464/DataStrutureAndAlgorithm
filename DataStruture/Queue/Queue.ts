@@ -5,7 +5,7 @@
 
 import { MyArray } from '../Array/MyArray'
 
-interface QueueInterface<T> {
+export interface QueueInterface<T> {
   size: number
   front: T
   isEmpty: () => boolean
