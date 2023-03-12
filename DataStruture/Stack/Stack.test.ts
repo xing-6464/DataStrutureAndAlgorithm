@@ -22,4 +22,10 @@ describe('测试 栈数据结构', () => {
     expect(stack.size).toBe(4)
     expect(stack.peek()).toBe(3)
   })
+
+  it('空栈', () => {
+    const stack = new Stack<number>()
+
+    expect(stack.isEmpty()).toBeTruthy()
+  })
 })
