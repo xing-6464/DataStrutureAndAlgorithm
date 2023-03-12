@@ -120,11 +120,11 @@ export class MyArray<T> extends Object {
     return false
   }
 
-  get getFirst() {
+  get first() {
     return this.get(0)
   }
 
-  get getLast() {
+  get last() {
     return this.get(this._size - 1)
   }
 

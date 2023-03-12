@@ -53,9 +53,9 @@ describe('测试数组类', () => {
     expect(arr.size).toBe(10)
 
     arr.removeFirst()
-    expect(arr.getFirst).toBe(1)
+    expect(arr.first).toBe(1)
     arr.removeLast()
-    expect(arr.getLast).toBe(8)
+    expect(arr.last).toBe(8)
 
     arr.remove(1)
     expect(arr.get(1)).toBe(3)
